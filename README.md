@@ -51,14 +51,29 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 ## CircuitPython_Servo
 
 ### Description & Code
-
+just put the code and make it spin
 ```python
 Code goes here
+import time
+import board
+import pwmio
+from adafruit_motor import servo
 
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+
+my_servo = servo.Servo(pwm)
+
+while True:
+    for angle in range(0, 180, 5):
+        my_servo.angle = angle
+        time.sleep(0.05)
+    for angle in range(180, 0, -5):
+        my_servo.angle = angle
+        time.sleep(0.05)
 ```
 
 ### Evidence
-
+<img src="https://lh3.googleusercontent.com/proxy/w2ffyg9ACcQSaJDLS8utCfdN67cPMtcQ1rPoZTdwryNKNUHKVCMUWASd1MJUffJYfJX-I8575famyuGy8bicKDOr8TaeAOeq5EgAJZKiugw" alt=wiring>
 ### Wiring
 
 ### Reflection
