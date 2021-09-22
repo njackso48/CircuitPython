@@ -12,8 +12,19 @@ This repository will actually serve as a aid to help you get started with your o
 
 ### Description & Code
 Description goes here
-
+Put the code on MU and made the ligh change colors and blink faster
 Here's how you make code look like code:
+mport board
+import neopixel
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+
+print("Make it red!")
+
+while True:
+    dot.fill((0, 0, 255))
+
+
 
 ```python
 Code goes here
